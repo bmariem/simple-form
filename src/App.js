@@ -14,7 +14,7 @@ function App() {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [passwordError, setPasswordError] = useState(false);
-  const [view, setView] = useState("edit");
+  const [view, setView] = useState(true);
 
   // FUNCTIONS
   const handleSubmit = (event) => {
@@ -23,14 +23,14 @@ function App() {
     if (password !== passwordConfirm) {
       setPasswordError(true);
     } else {
-      setView("result");
+      setView(false);
     }
   };
 
   return (
     <div className="App">
       <div className="container">
-        {view === "edit" ? (
+        {view ? (
           <Form
             userName={userName}
             setUserName={setUserName}
@@ -43,15 +43,14 @@ function App() {
             passwordError={passwordError}
             handleSubmit={handleSubmit}
           />
-        ) : null}
-        {view === "result" ? (
+        ) : (
           <Result
             userName={userName}
             email={email}
             password={password}
             setView={setView}
           />
-        ) : null}
+        )}
       </div>
 
       <Footer />

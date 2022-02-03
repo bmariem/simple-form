@@ -10,7 +10,7 @@ const Result = ({ userName, email, password, setView }) => {
         <button
           className="edit-button"
           onClick={() => {
-            setView("edit");
+            setView(true);
           }}
         >
           Edit your informations
