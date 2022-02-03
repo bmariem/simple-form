@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  align-self: center;
+  margin: 0 auto 20px;
+  font-size: 22px;
+  text-align: center;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: auto;
+  }
+}
+
+.results div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f2f2f2;
+  padding: 30px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.results div p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+form input {
+  font-family: "Roboto", sans-serif;
+  width: 300px;
+  border: 1px solid lightgray;
+  outline: none;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgb(252, 249, 249);
+  padding-left: 10px;
+  margin: 5px 0 25px 0;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.error-msg {
+  color: red;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 20px;
+}
+
+.submit-button,
+.edit-button {
+  color: white;
+  background-color: #5c47d3;
+  border: 1px solid #5c47d3;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.edit-button {
+  width: 250px;
+  outline: none;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+form > label {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+footer {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    position: inherit;
+    border-color: transparent;
+  }
+}
