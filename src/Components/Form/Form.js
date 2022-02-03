@@ -1,54 +1,60 @@
 import React from "react";
+
+// Components
+import Input from "../Input/Input";
+
 const Form = (props) => {
+  const {
+    handleSubmit,
+    userName,
+    setUserName,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    passwordConfirm,
+    setPasswordConfirm,
+    passwordError,
+  } = props;
+
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h1 className="title">Create account</h1>
-      <label>Name</label>
-      <input
-        type="text"
-        placeholder="Name"
-        value={props.userName}
-        onChange={(event) => {
-          props.setUserName(event.target.value);
-        }}
-        required
+
+      <Input
+        label={"Name"}
+        type={"text"}
+        placeholder={"User name"}
+        value={userName}
+        setInput={setUserName}
+      />
+      <Input
+        label={"Email"}
+        type={"email"}
+        placeholder={"email"}
+        value={email}
+        setInput={setEmail}
       />
 
-      <label>Email</label>
-      <input
-        type="email"
-        placeholder="email"
-        value={props.email}
-        onChange={(event) => {
-          props.setEmail(event.target.value);
-        }}
-        required
+      <Input
+        label={"Password"}
+        type={"password"}
+        placeholder={"password"}
+        value={password}
+        className={passwordError && "error"}
+        setInput={setPassword}
       />
 
-      <label>Password</label>
-      <input
-        type="password"
-        placeholder="password"
-        value={props.password}
-        className={props.passwordError && "error"}
-        onChange={(event) => {
-          props.setPassword(event.target.value);
-        }}
-        required
+      <Input
+        label={"Confirm your Password"}
+        type={"password"}
+        placeholder={"password"}
+        value={passwordConfirm}
+        className={passwordError && "error"}
+        setInput={setPasswordConfirm}
       />
 
-      <label>Confirm your Password</label>
-      <input
-        type="password"
-        placeholder="password"
-        value={props.passwordConfirm}
-        className={props.passwordError && "error"}
-        onChange={(event) => {
-          props.setPasswordConfirm(event.target.value);
-        }}
-        required
-      />
-      {props.passwordError && (
+      {passwordError && (
         <p className="error-msg">Les mots de passe ne sont pas identiques</p>
       )}
 
